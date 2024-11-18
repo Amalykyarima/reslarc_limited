@@ -1,5 +1,9 @@
 .navigation {
   background-color: #fff;
+  @media screen and (max-width: 768px) {
+    // display: none;
+    height: 80%;
+  }
 }
 
 .navigation-content {
@@ -8,6 +12,7 @@
   padding: 20px 56px;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .logo {
@@ -16,6 +21,34 @@
   object-position: center;
   width: 200px;
   max-width: 100%;
+
+  .svg-1 {
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+      // width: 50px;
+    }
+  }
+}
+
+.logo-phone {
+  // aspect-ratio: 1.92;
+  // object-fit: contain;
+  // object-position: center;
+  // width: 200px;
+  // max-width: 100%;
+  height: 36px;
+  max-width: 200px;
+  width: 100%;
+
+  .svg-2 {
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      // display: none;
+      width: 100%;
+    }
+  }
 }
 
 .menu-list {
@@ -25,6 +58,10 @@
   padding: 0;
   margin: 0;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .menu-link {
@@ -61,5 +98,67 @@
 
   .sales-inquiry {
     margin-top: 10px;
+  }
+}
+
+.desktop-header {
+  display: flex;
+
+  //padding-left: var(--side-padding);
+  //padding-right: var(--side-padding);
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-header {
+  width: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 70px;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    padding: 0 var(--side-padding);
+  }
+
+  .hamburger-menu {
+    width: 50px;
+    padding: 10px;
+    padding-right: 0;
+
+    .line1 {
+      width: 100%;
+      height: 3px;
+      content: "";
+      border-radius: 2px;
+      margin-bottom: 4px;
+      background-color: #e1a50c;
+
+    }
+
+    .line2 {
+      width: 70%;
+      height: 3px;
+      content: "";
+      border-radius: 2px;
+      background-color: #e1a50c;
+
+    }
+  }
+
+  .active-menu {
+    .line1 {
+      width: 40%;
+    }
+
+    .line2 {
+      width: 100%;
+    }
   }
 }

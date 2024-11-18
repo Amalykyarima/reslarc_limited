@@ -8,10 +8,15 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  openSideMenu: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
 
+}
+
+toggleSideMenu() {
+  this.openSideMenu = !this.openSideMenu;
 }
 }
