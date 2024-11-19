@@ -3,7 +3,8 @@
     <div class="logo" routerLink="/">
       <img class="navbar_brand" src="assets/images/home/reslarc_logoo.svg" alt="Navigation Icon" />
     </div>
-    <ul class="menu-list">
+
+    <ul #menuList class="menu-list">
       <li><a href="#" class="menu-link">Reslarc Intelligence</a></li>
       <li><a href="#" class="menu-link">Reslarc Space Systems</a></li>
       <li><a href="#" class="menu-link">News & Events</a></li>
@@ -19,15 +20,38 @@
 </nav>
 
 <!-- Mobile Header -->
-<header class="mobile-header scrolling align-items-center justify-content-between">
+<header class="mobile-header scrolling align-items-center justify-content-between" (click)="toggleNavBar()">
   <div class="logo-phone" routerLink="/">
       <img class="svg-2" src="assets/images/home/reslarc_logoo.svg" alt="Navigation Icon" />
     </div>
-  <div class="hamburger-menu d-flex flex-column align-items-end" [class.active-menu]="this.openSideMenu == true"
-      (click)="toggleSideMenu()">
+  <div class="hamburger-menu d-flex flex-column align-items-end">
       <div>
         <div class="line1 bg-purple-1"></div>
         <div class="line2 bg-purple-1"></div>
       </div>
   </div>
+  <nav class="nav-bar">
+    <ul >
+      <li><a href="#" class="menu-link">Reslarc Intelligence</a></li>
+      <li><a href="#" class="menu-link">Reslarc Space Systems</a></li>
+      <li><a href="#" class="menu-link">News & Events</a></li>
+      <li><a href="#" class="menu-link">Careers</a></li>
+      <li>
+        <a href="#" class="menu-link sales-inquiry">
+          Sales Inquiries
+          <!-- <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6151a8c26fe1439e46f26dd38dc1641c2f7e87d1a0606199ee7a0558a0e1ac9f?placeholderIfAbsent=true&apiKey=87b7ee3d57b849539b06e4310a49f151" class="sales-icon" alt="Sales inquiry icon" /> -->
+        </a>
+      </li>
+    </ul>
+
+  </nav>
 </header>
+
+<script>
+  hamburger = document.querySelector(".hamburger-menu");
+  hamburger.onclick = function(){
+    navBar = document.querySelector(".nav-bar");
+    navBar.classList.toggle("active");
+  }
+</script>
+
