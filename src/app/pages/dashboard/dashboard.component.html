@@ -1,0 +1,26 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <!-- <h2>App Name</h2> -->
+      <div class="logo" (click)="routeToHome()">
+        <img class="navbar_brand" src="assets/images/home/reslarc_logoo.svg" alt="Navigation Icon" />
+      </div>
+    </div>
+    <ul class="menu">
+      <!-- <li (click)="routeToDashboard()"  routerLinkActive="active">Dashboard</li> -->
+      <li (click)="routeToRequest()"  routerLinkActive="active">Requests</li>
+      <li (click)="routeToPayments()" routerLinkActive="active">Payments</li>
+      <li (click)="logOut()">Log Out</li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- <router-outlet></router-outlet> -->
+    <app-requests ></app-requests>
+    <!-- <app-dashboard></app-dashboard> -->
+    <app-payments *ngIf="showPayments"></app-payments>
+    <app-logout *ngIf="showLogout"></app-logout>
+  </div>
+</div>

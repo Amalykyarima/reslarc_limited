@@ -31,6 +31,16 @@ testClick() {
 
 }
 
+routeToDashboard(){
+  console.log('Register link clicked');
+  this.router.navigateByUrl('/dashboard')
+}
+
+routeToHome(){
+  console.log('Register link clicked');
+  this.router.navigateByUrl('/home')
+}
+
 
 toggleNavBar(): void {
   const navBar = document.querySelector('.nav-bar');

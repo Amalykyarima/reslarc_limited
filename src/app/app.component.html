@@ -3,8 +3,8 @@
   <app-home></app-home>
   <app-footer></app-footer>
   <router-outlet></router-outlet> -->
-<app-header></app-header> <!-- Static Header -->
+<app-header *ngIf="showHeader"></app-header> <!-- Static Header -->
 <div class="main-content">
   <router-outlet></router-outlet> <!-- Dynamic Content -->
 </div>
-<app-footer></app-footer> <!-- Static Footer -->
+<app-footer *ngIf="showHeader"></app-footer> <!-- Static Footer -->
