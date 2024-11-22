@@ -1,17 +1,17 @@
 <nav class="navigation">
   <div class="navigation-content">
-    <div class="logo" routerLink="/home">
+    <div (click)="routeToHome()" class="logo" routerLink="/home">
       <img class="navbar_brand" src="assets/images/home/reslarc_logoo.svg" alt="Navigation Icon" />
     </div>
 
     <ul #menuList class="menu-list">
       <li><a  href="#"  class="menu-link">Reslarc Intelligence</a></li>
       <li><a (click)="routeToDashboard()" class="menu-link">Reslarc Space Systems</a></li>
-      <li><a (click)="testClick()" class="menu-link">Register</a></li>
+      <li><a (click)="testClick()" class="menu-link">Our Services</a></li>
       <li><a href="#" class="menu-link">Careers</a></li>
       <li>
         <a class="menu-link sales-inquiry" (click)="routeToDashboard()">
-          Sales Inquiries
+          Login
           <!-- <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6151a8c26fe1439e46f26dd38dc1641c2f7e87d1a0606199ee7a0558a0e1ac9f?placeholderIfAbsent=true&apiKey=87b7ee3d57b849539b06e4310a49f151" class="sales-icon" alt="Sales inquiry icon" /> -->
         </a>
       </li>
@@ -35,7 +35,10 @@
       <li><a href="#" class="menu-link">Reslarc Intelligence</a></li>
       <li><a href="#" class="menu-link">Reslarc Space Systems</a></li>
       <li><a href="#" class="menu-link">News & Events</a></li>
+      <li><a (click)="testClick()" class="menu-link">Our Services</a></li>
       <li><a href="#" class="menu-link">Careers</a></li>
+      <li><a (click)="routeToDashboard()" class="menu-link">Login</a></li>
+
       <li>
         <a href="#" class="menu-link sales-inquiry">
           Sales Inquiries
