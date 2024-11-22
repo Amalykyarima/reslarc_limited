@@ -1,0 +1,40 @@
+/* Ensure the body and html take up the full height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent double scrollbars */
+}
+
+/* Root container for the app */
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header stays fixed at the top */
+app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: white; /* Optional: Add background to distinguish it */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+/* Main content area below the header */
+.main-content {
+  flex: 1;
+  margin-top: 120px; /* Adjust this to match the header's height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 0px; /* Optional: Add padding */
+}
+
+/* Footer (optional) */
+app-footer {
+  text-align: center;
+  padding: 10px;
+  background: #f1f1f1; /* Optional: Footer styling */
+}

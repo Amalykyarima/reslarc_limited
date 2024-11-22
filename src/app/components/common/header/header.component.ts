@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
@@ -17,15 +18,19 @@ export class HeaderComponent {
   @ViewChild('menuList', { static: true }) menuList!: ElementRef;
 
 
-  constructor() { }
+  constructor(private router: Router,
+    ) { }
 
   ngOnInit(): void {
 
 }
 
-ngAfterViewInit(): void {
-  this.menuList.nativeElement.style.maxHeight = '0px';
+testClick() {
+  console.log('Register link clicked');
+  this.router.navigateByUrl('/register');
+
 }
+
 
 toggleNavBar(): void {
   const navBar = document.querySelector('.nav-bar');

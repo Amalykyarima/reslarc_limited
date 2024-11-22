@@ -79,6 +79,9 @@
   color: #000;
   font: 900 18px Arial, sans-serif;
   text-decoration: none;
+  pointer-events: auto; /* Ensure links are clickable */
+  cursor: pointer;
+
 
 }
 
