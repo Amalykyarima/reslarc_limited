@@ -8,7 +8,27 @@ body {
     min-height: 100%;
     scroll-behavior: smooth;
     --box-shadow1: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Blender', blender;
+    // font-family: 'Blender', blender;
+    font-family: "Blender", Arial, Helvetica, sans-serif, Calibri;
+
+
+    @font-face {
+      font-family: "Blender";
+      src: url("assets/fonts/blender/BlenderPro-Bold.woff2") format("woff2"),
+           url("assets/fonts/blender/BlenderPro-Bold.woff") format("woff");
+      font-weight: 800;
+      font-style: normal;
+    }
+
+
+@font-face {
+  font-family: "Blender";
+  src: url("assets/fonts/blender/BlenderPro-Medium.woff2") format("woff2"),
+       url("assets/fonts/blender/BlenderPro-Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 
     p,
     h1,
@@ -34,3 +54,5 @@ body {
 //   font-weight: 500; /* Specify the font weight */
 //   font-style: normal;  /* Specify the font style */
 // }
+
+

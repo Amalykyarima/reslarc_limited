@@ -1,0 +1,118 @@
+<section class="conversation-section">
+  <div style="display: flex; flex-direction: row;     margin-left: 50px;
+  ">
+
+    <div class="accent-line-1"></div>
+    <article class="content-wrapper">
+      <h1 class="title">Start a conversation</h1>
+      <p class="description">
+        Maxar capabilities in space infrastructure and Earth intelligence help
+        you understand our changing planet, deliver global communications
+        and explore space.
+      </p>
+    </article>
+  </div>
+
+  <img
+    loading="lazy"
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/309a2a66a6bec80de8b823d3f1e03ff4554b2fc1885c2ef7eb4d62285ff497cc?placeholderIfAbsent=true&apiKey=87b7ee3d57b849539b06e4310a49f151"
+    alt="Maxar space infrastructure and Earth intelligence capabilities visualization"
+    class="banner-image"
+  />
+</section>
+
+<section >
+  <div class="contact-section">
+    <article class="intelligence-section">
+      <div class="accent-line"></div>
+      <div class="content-wrapper">
+        <h2 class="section-title">Maxar Intelligence</h2>
+        <p class="section-description">
+          Fill out the form below to get in touch with our sales team.
+        </p>
+        <a href="#contact-form" class="cta-button" tabindex="0">Complete form</a>
+      </div>
+    </article>
+    <article class="space-systems-section">
+      <div class="accent-line"></div>
+      <div class="content-wrapper">
+        <h2 class="section-title">Maxar Space Systems</h2>
+        <p class="section-description">
+          Contact our sales team at spacecommunications maxar.com.
+        </p>
+        <a href="mailto:spacecommunications@maxar.com" class="cta-button" tabindex="0">Email</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="form-container">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-content">
+    <div class="form-grid">
+      <div class="form-labels">
+        <label for="businessEmail" class="form-label">Business Email:</label>
+        <label for="firstName" class="form-label">First Name:</label>
+        <label for="lastName" class="form-label">Last Name:</label>
+        <label for="phoneNumber" class="form-label">Phone Number:</label>
+        <label for="jobTitle" class="form-label">Job Title:</label>
+        <label for="company" class="form-label">Company/Organization:</label>
+        <label for="industry" class="form-label">Industry:</label>
+        <label for="country" class="form-label">Country:</label>
+        <label for="useCase" class="form-label">I want to use Maxar data for:</label>
+        <label for="message" class="form-label">How can we help you?:</label>
+      </div>
+
+      <div class="form-inputs">
+        <input id="businessEmail" type="email" formControlName="businessEmail" class="form-input" />
+        <input id="firstName" type="text" formControlName="firstName" class="form-input" />
+        <input id="lastName" type="text" formControlName="lastName" class="form-input" />
+        <input id="phoneNumber" type="tel" formControlName="phoneNumber" class="form-input" />
+        <input id="jobTitle" type="text" formControlName="jobTitle" class="form-input" />
+        <input id="company" type="text" formControlName="company" class="form-input" />
+
+        <select id="industry" formControlName="industry" class="form-select">
+          <option value="">Select...</option>
+        </select>
+
+        <select id="country" formControlName="country" class="form-select">
+          <option value="">Select...</option>
+        </select>
+
+        <select id="useCase" formControlName="useCase" class="form-select">
+          <option value="">Select...</option>
+        </select>
+
+        <textarea id="message" formControlName="message" class="form-textarea"></textarea>
+      </div>
+    </div>
+
+    <fieldset class="communication-preferences">
+      <legend class="preference-title">Communication Preference:</legend>
+
+      <div class="preference-option">
+        <input type="radio" id="optIn" formControlName="preference" value="optIn" class="radio-input" />
+        <label for="optIn" class="radio-label">
+          Yes, I agree to continue receiving
+        </label>
+      </div>
+
+      <p class="consent-text">
+        commercial messages from Maxar, such as
+        emails about new products, events, and
+        promotions. I understand I will still have
+        the option to unsubscribe at any time.
+      </p>
+
+      <div class="preference-option">
+        <input type="radio" id="optOut" formControlName="preference" value="optOut" class="radio-input" />
+        <label for="optOut" class="radio-label">
+          No thanks, please unsubscribe me
+        </label>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+</section>
+
+

@@ -32,6 +32,10 @@
             "styles": [
               "src/styles.scss"
             ],
+            "externalDependencies": [
+              "assets/fonts/blender/BlenderPro-Bold.woff2",
+              "assets/fonts/blander/BlenderPro-Bold.woff"
+            ],
             "scripts": []
           },
           "configurations": {

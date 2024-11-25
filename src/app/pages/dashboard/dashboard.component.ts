@@ -4,12 +4,13 @@ import { RegisterComponent } from "../register/register.component";
 import { RequestsComponent } from "../requests/requests.component";
 import { PaymentsComponent } from "../payments/payments.component";
 import { LogoutComponent } from "../logout/logout.component";
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RequestsComponent, PaymentsComponent, LogoutComponent],
+  imports: [RequestsComponent, PaymentsComponent, LogoutComponent,CommonModule ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

@@ -7,7 +7,7 @@
 }
 
 .hero {
-  font-family: Arial, sans-serif;
+  // font-family: Arial, sans-serif;
   color: #fff;
   overflow: hidden;
   height: 75vh;
@@ -155,7 +155,7 @@
     }
 
     p {
-      font-size: 1.4em;
+      font-size: 1.2em;
 
       @media (min-width: 1280px) {
 
@@ -254,7 +254,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: Arial, sans-serif;
+  font-family: "Blender", Arial, sans-serif;
   width: 100%;
   padding: 25px 20px;
 }
@@ -315,7 +315,7 @@
   display: flex;
   max-width: 550px;
   flex-direction: column;
-  font-family: Arial, sans-serif;
+  font-family: "Blender", Arial, sans-serif;
   color: #000;
   text-align: center;
   align-self: center;
@@ -470,7 +470,7 @@
 .news-card {
   background-color: #003863;
   color: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family: "Blender", Arial, sans-serif;
   padding: 27px 20px;
   display: flex;
   flex-direction: column;
@@ -568,7 +568,7 @@
     }
 
     p {
-      font-family: "Din", Arial, Helvetica, sans-serif, Calibri;
+      font-family: "Blender", Arial, sans-serif;
       font-size: 18px;
       line-height: 1.3;
       text-rendering: optimizeSpeed;

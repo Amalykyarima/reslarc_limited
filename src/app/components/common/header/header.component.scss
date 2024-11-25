@@ -77,7 +77,9 @@
 
 .menu-link {
   color: #000;
-  font: 900 18px Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  // font: 900 18px Arial, sans-serif;
   text-decoration: none;
   pointer-events: auto; /* Ensure links are clickable */
   cursor: pointer;
@@ -308,3 +310,77 @@ nav {
 //   }
 
 // }
+.navigation-content {
+  position: relative;
+  background-color: #ffffff; /* Matches the dark header background */
+  color: white; /* Text color */
+  z-index: 1000; /* Ensures the dropdown stays above other content */
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu-list li {
+  margin-right: 20px; /* Spacing between menu items */
+  position: relative;
+}
+
+.menu-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px 15px;
+  // font-size: 16px;
+}
+
+.menu-link:hover {
+  color: #ffa500; /* Highlight color on hover */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Aligns dropdown below the header */
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  background-color: #2e2e2e; /* Dropdown background color */
+  color: white;
+  border-top: 2px solid #444; /* Optional border to separate header from dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 20px 10%; /* Add padding and center content */
+  z-index: 999;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  flex-wrap: wrap; /* Wrap items if the screen is too narrow */
+}
+
+.dropdown-menu li {
+  margin-bottom: 15px; /* Space between rows */
+  width: calc(33.333% - 10px); /* Each item takes up one-third of the width with spacing */
+  text-align: center; /* Center align items */
+}
+
+.dropdown-menu li:last-child {
+  margin-bottom: 0; /* Remove bottom margin for the last row */
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.dropdown-menu a:hover {
+  color: #ffa500; /* Highlight color for dropdown items on hover */
+}
+

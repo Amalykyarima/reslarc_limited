@@ -1,37 +1,42 @@
 <nav class="navigation">
   <div class="navigation-content">
-    <div (click)="routeToHome()" class="logo" routerLink="/home">
+    <div (click)="routeToHome()" class="logo" >
       <img class="navbar_brand" src="assets/images/home/reslarc_logoo.svg" alt="Navigation Icon" />
     </div>
 
     <ul #menuList class="menu-list">
-      <li><a  href="#"  class="menu-link">Reslarc Intelligence</a></li>
-      <li><a (click)="routeToDashboard()" class="menu-link">Reslarc Space Systems</a></li>
-      <li><a (click)="testClick()" class="menu-link">Our Services</a></li>
+      <li><a (click)="showDropdown('intelligence')" class="menu-link">Reslarc Intelligence</a></li>
+      <li><a (click)="showDropdown('space')" class="menu-link">Reslarc Space Systems</a> </li>
+      <li><a (click)="showDropdown('space')" class="menu-link">News & Events</a> </li>
+      <li><a (click)="showDropdown('space')" class="menu-link">Careers</a> </li>
+      <li><a (click)="showDropdown('sales')" class="menu-link">Sales Enquiry</a></li>
       <li><a href="#" class="menu-link">Careers</a></li>
-      <li>
-        <a class="menu-link sales-inquiry" (click)="routeToDashboard()">
-          Login
-          <!-- <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6151a8c26fe1439e46f26dd38dc1641c2f7e87d1a0606199ee7a0558a0e1ac9f?placeholderIfAbsent=true&apiKey=87b7ee3d57b849539b06e4310a49f151" class="sales-icon" alt="Sales inquiry icon" /> -->
-        </a>
-      </li>
     </ul>
   </div>
 </nav>
+<!-- Dropdown -->
+  <!-- Dynamic Dropdown -->
+  <div *ngIf="dropdownVisible" class="dropdown-menu">
+    <ul>
+      <li *ngFor="let item of dropdownItems">
+        <a href="{{ item.link }}">{{ item.label }}</a>
+      </li>
+    </ul>
+  </div>
 
 <!-- Mobile Header -->
 <header class="mobile-header scrolling align-items-center justify-content-between" (click)="toggleNavBar()">
   <div class="logo-phone" routerLink="/">
-      <img class="svg-2" src="assets/images/home/reslarc_logoo.svg" alt="Navigation Icon" />
-    </div>
+    <img class="svg-2" src="assets/images/home/reslarc_logoo.svg" alt="Navigation Icon" />
+  </div>
   <div class="hamburger-menu d-flex flex-column align-items-end">
-      <div>
-        <div class="line1 bg-purple-1"></div>
-        <div class="line2 bg-purple-1"></div>
-      </div>
+    <div>
+      <div class="line1 bg-purple-1"></div>
+      <div class="line2 bg-purple-1"></div>
+    </div>
   </div>
   <nav class="nav-bar">
-    <ul >
+    <ul>
       <li><a href="#" class="menu-link">Reslarc Intelligence</a></li>
       <li><a href="#" class="menu-link">Reslarc Space Systems</a></li>
       <li><a href="#" class="menu-link">News & Events</a></li>
@@ -52,9 +57,8 @@
 
 <script>
   hamburger = document.querySelector(".hamburger-menu");
-  hamburger.onclick = function(){
+  hamburger.onclick = function () {
     navBar = document.querySelector(".nav-bar");
     navBar.classList.toggle("active");
   }
 </script>
-
