@@ -53,7 +53,7 @@ export class HeaderComponent {
     ],
     careers: [
       { label: 'Open Positions', link: '/careers/jobs' },
-      { label: 'Life at Maxar', link: '/careers/life' },
+      { label: 'Life at Reslarc', link: '/careers/life' },
       { label: 'Internships', link: '/careers/internships' },
     ],
     sales: [
