@@ -29,6 +29,7 @@ export class HeaderComponent {
     { label: string; link: string }[]
   > = {
     intelligence: [
+      { label: 'About Us', link: '/about' },
       { label: 'Our Vision', link: '/register' },
       { label: 'Our Team', link: '/intelligence/team' },
       { label: 'Case Studies', link: '/intelligence/cases' },

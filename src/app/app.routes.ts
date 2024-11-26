@@ -6,10 +6,12 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { RequestsComponent } from './pages/requests/requests.component';
 import { SalesEnquiryComponent } from './pages/sales-enquiry/sales-enquiry.component';
+import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route
   { path: 'home', component: HomeComponent }, // Default route
+  { path: 'about', component: AboutComponent }, // Default route
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'requests', component: RequestsComponent },
