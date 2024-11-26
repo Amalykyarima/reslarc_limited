@@ -1,0 +1,41 @@
+<section >
+  <main class="login-container">
+    <section class="login-card">
+      <h1 class="login-title">Maxar Login</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <label for="email" class="form-label">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-input"
+          aria-label="Email input"
+        />
+
+        <label for="password" class="form-label">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="form-input"
+          aria-label="Password input"
+        />
+
+        <section class="form-options">
+          <div class="remember-me">
+            <input
+              type="checkbox"
+              id="remember"
+              formControlName="remember"
+              class="checkbox-input"
+            />
+            <label for="remember" class="checkbox-label">Remember me</label>
+          </div>
+          <button type="button" class="forgot-password">Forgot Password?</button>
+        </section>
+
+        <button type="submit" class="login-button">Log In</button>
+      </form>
+    </section>
+  </main>
+</section>

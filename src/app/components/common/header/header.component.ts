@@ -33,6 +33,8 @@ export class HeaderComponent {
       { label: 'Our Vision', link: '/register' },
       { label: 'Our Team', link: '/intelligence/team' },
       { label: 'Case Studies', link: '/intelligence/cases' },
+      { label: 'Login', link: '/login' },
+
     ],
     services: [
       { label: 'Our Business', link: '/services/business' },

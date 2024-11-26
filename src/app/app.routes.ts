@@ -7,6 +7,7 @@ import { PaymentsComponent } from './pages/payments/payments.component';
 import { RequestsComponent } from './pages/requests/requests.component';
 import { SalesEnquiryComponent } from './pages/sales-enquiry/sales-enquiry.component';
 import { AboutComponent } from './pages/about/about.component';
+import { LogInComponent } from './pages/log-in/log-in.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route
@@ -18,6 +19,8 @@ export const routes: Routes = [
   { path: 'payments', component: PaymentsComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'sales_enquiry', component: SalesEnquiryComponent },
+  { path: 'login', component: LogInComponent },
+
 
 ];
 
