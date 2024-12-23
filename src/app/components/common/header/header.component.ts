@@ -30,9 +30,10 @@ export class HeaderComponent {
   > = {
     intelligence: [
       { label: 'About Us', link: '/about' },
-      { label: 'Our Vision', link: '/register' },
+      { label: 'Our Vision', link: '/Register' },
       { label: 'Our Team', link: '/intelligence/team' },
       { label: 'Case Studies', link: '/intelligence/cases' },
+      { label: 'Register', link: '/register' },
       { label: 'Login', link: '/login' },
 
     ],

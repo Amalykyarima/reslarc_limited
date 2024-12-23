@@ -12,8 +12,8 @@
       <p style="color: rgb(231, 164, 76); font-size: 30px;">CAST-MP</p>
     </div>
     <ul class="menu">
-      <!-- <li (click)="routeToDashboard()"  routerLinkActive="active">Dashboard</li> -->
-      <li (click)="routeToRequest()"  routerLinkActive="active">Requests</li>
+      <li (click)="routeToAllRequest()"  routerLinkActive="active">All Request</li>
+      <li (click)="routeToRequest()"  routerLinkActive="active">Add Requests</li>
       <li (click)="routeToPayments()" routerLinkActive="active">Payments</li>
       <li (click)="logOut()">Log Out</li>
     </ul>
@@ -21,9 +21,8 @@
 
   <!-- Main Content -->
   <div class="main-content">
-    <!-- <router-outlet></router-outlet> -->
-    <app-requests ></app-requests>
-    <!-- <app-dashboard></app-dashboard> -->
+    <app-requests *ngIf="showRequest" ></app-requests>
+    <app-all-requests *ngIf="showAllRequest"></app-all-requests>
     <app-payments *ngIf="showPayments"></app-payments>
     <app-logout *ngIf="showLogout"></app-logout>
   </div>

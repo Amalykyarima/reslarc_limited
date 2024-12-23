@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { GeneralService } from '../../services/general.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-requests',
@@ -9,17 +11,21 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './requests.component.scss'
 })
 export class RequestsComponent {
-  registrationForm: FormGroup;
+  requestForm: FormGroup;
   uploadedFile: File | null = null;
 
   constructor(
-    private fb: FormBuilder) {
-    this.registrationForm = this.fb.group({
+    private fb: FormBuilder,
+    private generalService: GeneralService,
+    private router: Router) {
+    this.requestForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern(/^\d{10,15}$/)]],
-      organization: [''],
+      description: ['', Validators.required],
     });
+  }
+
+  ngOnInit() {
+    this.getRequests();
   }
 
   onFileChange(event: any): void {
@@ -29,26 +35,40 @@ export class RequestsComponent {
     }
   }
 
-  payment(){
+  payment() {
 
+  }
+
+  getRequests(){
+    this.generalService.getRequests().subscribe((res: any) => {
+      console.log('getRequests',res);
+      if (res.statusCode === 200) {
+        console.log(res.data);
+      } else {
+        console.error(res.message);
+      }
+    })
   }
 
   onSubmit(): void {
-    if (this.registrationForm.valid) {
-      const formData = new FormData();
-      formData.append('name', this.registrationForm.value.name);
-      formData.append('email', this.registrationForm.value.email);
-      formData.append('phone', this.registrationForm.value.phone);
-      formData.append('organization', this.registrationForm.value.organization);
+    if (this.requestForm.valid) {
+      const formData = this.requestForm.value;
+      console.log('Request Submitted Successfully:', formData);
+      this.generalService.createRequest(formData).subscribe((res: any) => {
+        console.log(res);
+        if (res.statusCode === 201) {
+          alert(res.message);
+          this.requestForm.reset();
+          this.router.navigateByUrl('/dashboard')
+        } else {
+          alert(res.message);
+        }
+      })
 
-      if (this.uploadedFile) {
-        formData.append('idCard', this.uploadedFile);
-      }
-
-      console.log('Form submitted!', formData);
-      // Add API call here to submit formData to your backend
+      // Do something with the formData, e.g., send it to the server
     } else {
-      console.error('Form is invalid');
+      console.error('Request is invalid');
     }
   }
+
 }

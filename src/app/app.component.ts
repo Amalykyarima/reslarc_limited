@@ -11,14 +11,24 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, DashboardComponent, RouterLink, RouterLinkActive, HeaderComponent, FooterComponent, ReslarcCareersComponent, RegisterComponent,
     ReslarcIntelligenceComponent, ReslarcNewsComponent, ReslarcSpaceSystemsComponent, AboutComponent, HomeComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ]
 })
+
 
 export class AppComponent {
   title = 'reslarc_limited';
