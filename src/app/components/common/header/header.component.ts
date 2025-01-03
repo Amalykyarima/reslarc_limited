@@ -30,9 +30,9 @@ export class HeaderComponent {
   > = {
     intelligence: [
       { label: 'About Us', link: '/about' },
-      { label: 'Our Vision', link: '/Register' },
-      { label: 'Our Team', link: '/intelligence/team' },
-      { label: 'Case Studies', link: '/intelligence/cases' },
+      { label: 'Our Vision', link: '/vision' },
+      { label: 'Our Team', link: '/team' },
+      { label: 'Case Studies', link: '/case_study' },
       { label: 'Register', link: '/register' },
       { label: 'Login', link: '/login' },
 
@@ -46,9 +46,9 @@ export class HeaderComponent {
       { label: 'Login', link: '/services/login' },
     ],
     space: [
-      { label: 'Spacecraft', link: '/space/systems' },
-      { label: 'Satellite Imaging', link: '/space/imaging' },
-      { label: 'R&D', link: '/space/research' },
+      { label: 'Spacecraft', link: '/space_craft' },
+      { label: 'Satellite Imaging', link: '/satellite_imagining' },
+      { label: 'R&D', link: '/r_d' },
     ],
     news: [
       { label: 'Press Releases', link: '/news/press' },

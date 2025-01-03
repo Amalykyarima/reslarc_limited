@@ -47,6 +47,7 @@ export class AllRequestsComponent {
           console.log('No requests found');
         }
       } else {
+        this.requests = []; // Ensure it's an empty array
         console.error(res.message);
       }
     });
