@@ -14,6 +14,9 @@ import { CaseStudyComponent } from './pages/case-study/case-study.component';
 import { SpaceCraftComponent } from './pages/space-craft/space-craft.component';
 import { RDComponent } from './pages/r-d/r-d.component';
 import { SatelliteImagingComponent } from './pages/satellite-imaging/satellite-imaging.component';
+import { PressReleaseComponent } from './pages/press-release/press-release.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { EventsComponent } from './pages/events/events.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route
@@ -32,6 +35,17 @@ export const routes: Routes = [
   { path: 'r_d', component: RDComponent },
   { path: 'satellite_imagining', component: SatelliteImagingComponent },
   { path: 'space_craft', component: SpaceCraftComponent },
+  { path: 'press_release', component: PressReleaseComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'events', component: EventsComponent },
+  { path: 'open_positions', component: SpaceCraftComponent },
+  { path: 'lif_at_reslarc', component: SpaceCraftComponent },
+  { path: 'internships', component: SpaceCraftComponent },
+
+
+
+
+
 
 
 

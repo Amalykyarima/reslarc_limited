@@ -51,14 +51,14 @@ export class HeaderComponent {
       { label: 'R&D', link: '/r_d' },
     ],
     news: [
-      { label: 'Press Releases', link: '/news/press' },
-      { label: 'Blog', link: '/news/blog' },
-      { label: 'Events', link: '/news/events' },
+      { label: 'Press Releases', link: '/press_release' },
+      { label: 'Blog', link: '/blog' },
+      { label: 'Events', link: '/events' },
     ],
     careers: [
-      { label: 'Open Positions', link: '/careers/jobs' },
-      { label: 'Life at Reslarc', link: '/careers/life' },
-      { label: 'Internships', link: '/careers/internships' },
+      { label: 'Open Positions', link: '/open_positions' },
+      { label: 'Life at Reslarc', link: '/life_at_reslarc' },
+      { label: 'Internships', link: '/internships' },
     ],
     sales: [
       { label: 'Contact Us', link: '/sales_enquiry' },
