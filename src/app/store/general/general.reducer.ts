@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { ResetPassword, Signin } from 'src/app/models/auth';
+import {  Signin } from '../../models/auth';
 import * as GeneralActions from './general.actions';
 // import * as internal from 'stream';
 
