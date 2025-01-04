@@ -2,14 +2,19 @@
   <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
     <h2>Request Form</h2>
 
-       <div class="form-group">
+    <div class="form-group">
       <label for="name">Name</label>
       <input id="name" type="text" formControlName="name" placeholder="Enter your name" required />
     </div>
 
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea id="description" type="text" formControlName="description" placeholder="Give more details" required ></textarea>
+      <textarea id="description" type="text" formControlName="description" placeholder="Give more details" required></textarea>
+    </div>
+
+    <!-- Make Payment Link -->
+    <div class="make-payment">
+      <a href="https://paystack.com/pay/cast-mp-pay" target="_blank" class="payment-link">Make Payment</a>
     </div>
 
     <button type="submit" [disabled]="requestForm.invalid">Submit</button>
