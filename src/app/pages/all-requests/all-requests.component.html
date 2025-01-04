@@ -1,5 +1,5 @@
 <div *ngIf="requests">
-  <div class="table-container">
+  <div *ngIf="!selectedRequest" class="table-container">
     <table *ngIf="requests.length > 0; else emptyState">
       <thead>
         <tr>
@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let request of requests">
+        <tr *ngFor="let request of requests" (click)="showRequestDetails(request)">
           <td>{{ request.createdAt | date: 'medium' }}</td>
           <td>{{ request.name }}</td>
           <td>{{ request.description }}</td>
@@ -19,6 +19,48 @@
       </tbody>
     </table>
   </div>
+
+  <div *ngIf="selectedRequest">
+    <!-- Back Button -->
+    <button class="back-button" (click)="goBack()">Back</button>
+
+    <!-- Request Details -->
+    <div class="request-details">
+      <h3>Request Details</h3>
+      <ul>
+        <li><strong>Date:</strong> {{ selectedRequest.createdAt | date: 'medium' }}</li>
+        <li><strong>Name:</strong> {{ selectedRequest.name }}</li>
+        <li><strong>Description:</strong> {{ selectedRequest.description }}</li>
+        <li><strong>Status:</strong> {{ selectedRequest.status }}</li>
+      </ul>
+    </div>
+
+    <!-- Customer Information -->
+    <div class="customer-info">
+      <h3>Customer Information</h3>
+      <ul>
+        <li><strong>Full Name:</strong> {{ selectedRequest.user.firstName }} {{ selectedRequest.user.lastName }}</li>
+        <li><strong>Email:</strong> {{ selectedRequest.user.email }}</li>
+        <li><strong>Organization:</strong> {{ selectedRequest.user.organization }}</li>
+        <li><strong>Job Title:</strong> {{ selectedRequest.user.jobTitle }}</li>
+        <li><strong>Industry:</strong> {{ selectedRequest.user.industry }}</li>
+        <li><strong>Country:</strong> {{ selectedRequest.user.country }}</li>
+      </ul>
+    </div>
+
+    <!-- Files Section -->
+    <div class="files-section" *ngIf="selectedRequest.files && selectedRequest.files.length > 0">
+      <h3>Attached Files</h3>
+      <ul>
+        <li *ngFor="let file of selectedRequest.files">
+          <p><strong>File Name:</strong> {{ file.name }}</p>
+          <a [href]="file.secure_url" target="_blank">View File</a>
+          <button (click)="downloadFile(file.url)">Download</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
   <ng-template #emptyState>
     <div class="empty-state">

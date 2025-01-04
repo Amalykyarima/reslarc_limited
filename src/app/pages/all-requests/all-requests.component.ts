@@ -12,6 +12,10 @@ import { GeneralService } from '../../services/general.service';
 })
 export class AllRequestsComponent {
   requests:any;
+  selectedRequest: any = null;
+  id: string = ""
+
+
 
   constructor(
     private generalService: GeneralService,
@@ -52,6 +56,25 @@ export class AllRequestsComponent {
       }
     });
   }
+
+  showRequestDetails(request: any): void {
+    this.selectedRequest = request;
+    this.id = this.selectedRequest._id;
+    console.log('id', this.selectedRequest._id)
+  }
+
+  goBack(): void {
+    this.selectedRequest = null;
+  }
+
+  downloadFile(fileUrl: string): void {
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileUrl.split('/').pop() || 'download'; // Extract file name or set default
+    link.target = '_blank'; // Optional: opens the download in a new tab
+    link.click();
+  }
+
 
 
 
