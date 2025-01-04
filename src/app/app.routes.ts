@@ -39,7 +39,7 @@ export const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'events', component: EventsComponent },
   { path: 'open_positions', component: SpaceCraftComponent },
-  { path: 'lif_at_reslarc', component: SpaceCraftComponent },
+  { path: 'life_at_reslarc', component: SpaceCraftComponent },
   { path: 'internships', component: SpaceCraftComponent },
 
 
