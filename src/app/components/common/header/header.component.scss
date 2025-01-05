@@ -83,7 +83,9 @@
   text-decoration: none;
   pointer-events: auto; /* Ensure links are clickable */
   cursor: pointer;
-
+  @media screen and (max-width: 1550px) {
+    font-size: 13px;
+  }
 
 }
 
