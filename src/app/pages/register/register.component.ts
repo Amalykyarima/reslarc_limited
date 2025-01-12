@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule, NgStyle } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GeneralService } from '../../services/general.service';
 import { Router } from '@angular/router';
@@ -8,13 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
   registrationForm: FormGroup;
   uploadedFile: File | null = null;
+  processLoading: boolean = false;
 
   constructor(private fb: FormBuilder,
               private generalService: GeneralService,
@@ -74,16 +76,19 @@ export class RegisterComponent {
   // }
 
   onSubmit(): void {
+    this.processLoading = true;
     if (this.registrationForm.valid) {
       const formData = this.registrationForm.value;
       console.log('Form Submitted Successfully:', formData);
       this.generalService.register(formData).subscribe((res:any)=>{
         console.log(res);
         if (res.statusCode === 201){
+          this.processLoading = false;
           alert(res.message);
           this.registrationForm.reset();
           this.router.navigateByUrl('/login')
         } else {
+          this.processLoading = false;
           alert(res.message);
         }
       })
