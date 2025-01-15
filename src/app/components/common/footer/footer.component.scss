@@ -81,9 +81,15 @@
     padding: 40px 20px;
   }
   .footer-nav {
-    flex-direction: column;
+    // flex-direction: column;
+    // display: none;
   }
   .social-icons {
     margin-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-nav {
+    display: none;
   }
 }

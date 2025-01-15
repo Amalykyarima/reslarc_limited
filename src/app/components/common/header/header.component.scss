@@ -386,3 +386,11 @@ nav {
   color: #ffa500; /* Highlight color for dropdown items on hover */
 }
 
+@media (max-width: 991px) {
+  .dropdown-menu li {
+    margin-bottom: 15px; /* Space between rows */
+    text-align: center; /* Center align items */
+    width: auto;
+  }
+}
+

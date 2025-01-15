@@ -150,6 +150,8 @@ margin-top: 200px;
 @media (max-width: 991px) {
   .contact-section {
     gap: 40px;
+    display: flex;
+    flex-direction: column;
   }
 
   .content-wrapper {
